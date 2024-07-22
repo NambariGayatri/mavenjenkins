@@ -4,6 +4,10 @@ pipeline
 
     stages 
     {
+        stage('CheckOut') 
+	    {
+           git 'https://github.com/NambariGayatri/mavenjenkins.git'
+	    }
         stage('Build') 
         {
             steps 
