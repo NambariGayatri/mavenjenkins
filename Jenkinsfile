@@ -51,7 +51,7 @@ pipeline
                 from: 'jenkins@example.com',
                 replyTo: 'jenkins@example.com',
                 mimeType: 'text/html'
-    	}
+    	)
 
     }
 }
