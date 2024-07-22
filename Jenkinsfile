@@ -41,8 +41,20 @@ pipeline
 
     	always
     	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'gayatri.nambari@gmail.com'
+    		emailext{
+	        subject:"Pipeline status: ${currentbuild.result}",
+	        body:  '''<html>
+	                     <body>
+		                 <p>Build Status: ${currentbuild.result}<p>
+		                 <p>Build Number: ${currentbuild.Number}<p>
+		             </body>
+	                  </html>''',
+	       to: 'gayatri.nambari@gmail.com'
+	       from: 'jenkins@example.com'
+	       replyTo: 'jenkins@example.com'
+	       mimeType: 'text/html'
     	}
 
     }
 }
+}	
