@@ -42,11 +42,11 @@ pipeline
     	always
     	{
     		emailext{
-	        subject:"Pipeline status: ${currentbuild.result}",
+	        subject:"Pipeline status: ${BUILD_NUMBER}",
 	        body:  '''<html>
 	                     <body>
-		                 <p>Build Status: ${currentbuild.result}<p>
-		                 <p>Build Number: ${currentbuild.Number}<p>
+		                 <p>Build Status: ${BUILD_STATUS}</p>
+		                 <p>Build Number: ${BUILD_NUMBERr}</p>
 		             </body>
 	                  </html>''',
 	       to: 'gayatri.nambari@gmail.com'
